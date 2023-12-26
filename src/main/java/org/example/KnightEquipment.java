@@ -1,15 +1,14 @@
 package org.example;
 
-import java.util.ArrayList;
 import java.util.Comparator;
-import java.util.List;
+
 /**
  * Represents knight equipment containing ammunition.
  *
  * @param <T> The type of ammunition.
  */
 public class KnightEquipment<T extends Ammunition> {
-    List<T> equipment = new ArrayList<>();
+    AmmunitionList equipment = new AmmunitionList();
 
     /**
      * Adds ammunition to the knight's equipment.
@@ -47,8 +46,8 @@ public class KnightEquipment<T extends Ammunition> {
      * @param maxPrice The maximum price.
      * @return A list of ammunition within the specified price range.
      */
-    public List<Ammunition> findEquipmentInPriceRange(double minPrice, double maxPrice) {
-        List<Ammunition> result = new ArrayList<>();
+    public AmmunitionList findEquipmentInPriceRange(double minPrice, double maxPrice) {
+        AmmunitionList result = new AmmunitionList();
         for (Ammunition ammunition : equipment) {
             if (ammunition.price >= minPrice && ammunition.price <= maxPrice) {
                 result.add(ammunition);

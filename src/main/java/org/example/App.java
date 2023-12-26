@@ -12,7 +12,7 @@ public class App {
      */
     public static void main( String[] args ) {
         try {
-            Sword sword = new Sword("Excalibur", -5.0, 200.0, 10);
+            Sword sword = new Sword("Excalibur", 5.0, 200.0, 10);
             Shield shield = new Shield("Steel Shield", 8.0, 100.0, 8);
             Armor armor = new Armor("Knight Armor", 15.0, 300.0, 15);
             Helmet helmet = new Helmet("Knight Helmet", 2.0, 150.0, 15);
