@@ -178,7 +178,7 @@ public class AmmunitionList implements List<Ammunition> {
      *                             of the runtime type of every element in this list.
      */
     @Override
-    public <T> T @NotNull [] toArray(@NotNull T @NotNull [] a) {
+    public <T> T @NotNull [] toArray(T @NotNull [] a) {
         if (a.length < size) {
             return Arrays.copyOf(elements, size, (Class<? extends T[]>) a.getClass());
         } else {
