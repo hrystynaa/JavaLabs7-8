@@ -43,5 +43,5 @@ JCC standards and be thoroughly documented.
 - Build and run project with IDE or use this command:
 ```cmd
   mvn clean install
-  java -cp target/Lab7-1.0-SNAPSHOT.jar org.example.App
+  java -cp target/Labs7-8-1.0-SNAPSHOT.jar org.example.App
 ```
