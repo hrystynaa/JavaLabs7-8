@@ -12,13 +12,13 @@ public class Sword extends Ammunition {
      * @param weight    The weight of the sword.
      * @param price     The price of the sword.
      * @param sharpness The sharpness of the sword.
-     * @throws IllegalArgumentException if name is empty, or weight/price/sharpness is negative.
+     * @throws AmmunitionException if name is empty, or weight/price/sharpness is negative.
      */
-    public Sword(String name, double weight, double price, int sharpness) {
+    public Sword(String name, double weight, double price, int sharpness) throws AmmunitionException {
         super(name, weight, price);
 
         if (sharpness < 0) {
-            throw new IllegalArgumentException("Sword sharpness cannot be negative.");
+            throw new AmmunitionException("Sword sharpness cannot be negative.");
         }
 
         this.sharpness = sharpness;

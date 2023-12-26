@@ -1,6 +1,8 @@
 package org.example;
 
 import java.util.List;
+import java.util.NoSuchElementException;
+
 /**
  * The main application class for managing knight equipment.
  */
@@ -40,7 +42,9 @@ public class App {
             for (Ammunition ammunition : ammunitionInPriceRange) {
                 System.out.println(ammunition);
             }
-        } catch (IllegalArgumentException e) {
+        } catch (AmmunitionException a) {
+            System.out.println("Ammunition exception: " + a.getMessage());
+        } catch (RuntimeException e) {
             System.out.println(e.getMessage());
         }
     }

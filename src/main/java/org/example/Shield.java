@@ -12,13 +12,13 @@ public class Shield extends Ammunition {
      * @param weight  The weight of the shield.
      * @param price   The price of the shield.
      * @param defense The defense provided by the shield.
-     * @throws IllegalArgumentException if name is empty, or weight/price/defense is negative.
+     * @throws AmmunitionException if name is empty, or weight/price/defense is negative.
      */
-    public Shield(String name, double weight, double price, int defense) {
+    public Shield(String name, double weight, double price, int defense) throws AmmunitionException {
         super(name, weight, price);
 
         if (defense < 0) {
-            throw new IllegalArgumentException("Shield defense cannot be negative.");
+            throw new AmmunitionException("Shield defense cannot be negative.");
         }
 
         this.defense = defense;

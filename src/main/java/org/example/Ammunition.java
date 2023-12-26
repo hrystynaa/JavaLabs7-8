@@ -15,15 +15,15 @@ public class Ammunition {
      * @param price  The price of the ammunition.
      * @throws IllegalArgumentException if name is empty, or weight/price is negative.
      */
-    public Ammunition(String name, double weight, double price) {
+    public Ammunition(String name, double weight, double price) throws AmmunitionException {
         if (name.isEmpty()) {
-            throw new IllegalArgumentException("Name cannot be empty: " + name);
+            throw new AmmunitionException("Name cannot be empty: " + name);
         }
         if (weight < 0) {
-            throw new IllegalArgumentException("Weight cannot be negative: " + weight);
+            throw new AmmunitionException("Weight cannot be negative: " + weight);
         }
         if (price < 0) {
-            throw new IllegalArgumentException("Price cannot be negative: " + price);
+            throw new AmmunitionException("Price cannot be negative: " + price);
         }
 
         this.name = name;
