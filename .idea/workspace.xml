@@ -4,14 +4,19 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="918d5781-ac36-4de4-a68f-c4bc8ea6af82" name="Changes" comment="Fix list implementation">
+    <list default="true" id="918d5781-ac36-4de4-a68f-c4bc8ea6af82" name="Changes" comment="Add exception handling">
+      <change afterPath="$PROJECT_DIR$/.idea/uiDesigner.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Ammunition.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Ammunition.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Ammunition.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/ammunition/Ammunition.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/AmmunitionList.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/AmmunitionList.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/src/main/java/org/example/App.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/App.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Armor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Armor.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Helmet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Helmet.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Shield.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Shield.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Sword.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/Sword.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Armor.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/ammunition/Armor.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Helmet.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/ammunition/Helmet.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/KnightEquipment.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/KnightEquipment.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Shield.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/ammunition/Shield.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/org/example/Sword.java" beforeDir="false" afterPath="$PROJECT_DIR$/src/main/java/org/example/ammunition/Sword.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/org/example/AppTest.java" beforeDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -22,6 +27,7 @@
     <option name="RECENT_TEMPLATES">
       <list>
         <option value="Class" />
+        <option value="JUnit3 Test Class" />
       </list>
     </option>
   </component>
@@ -43,12 +49,31 @@
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
     "Application.App.executor": "Run",
+    "JUnit.AmmunitionListTest.executor": "Run",
+    "JUnit.AmmunitionListTest.increaseCapacity_EnsureCapacity.executor": "Run",
+    "JUnit.AmmunitionListTest.removeByObject_NullObject.executor": "Run",
+    "JUnit.AmmunitionListTest.retainAll_Empty.executor": "Run",
+    "JUnit.AmmunitionListTest.testAddNullAgain.executor": "Run",
+    "JUnit.AmmunitionListTest.testContainsNull.executor": "Run",
+    "JUnit.AmmunitionTest.executor": "Run",
+    "JUnit.AmmunitionTest.testAmmunitionConstructorNullName.executor": "Run",
+    "JUnit.KnightEquipmentTest.executor": "Run",
+    "JUnit.KnightEquipmentTest.testAddAmmunitionWithNull.executor": "Run",
+    "JUnit.KnightEquipmentTest.testCalculateCost.executor": "Run",
+    "JUnit.KnightEquipmentTest.testFindEquipmentInPriceRange.executor": "Run",
+    "JUnit.KnightEquipmentTest.testSortAmmunitionByWeight.executor": "Run",
+    "JUnit.KnightEquipmentTest.testToString.executor": "Run",
+    "JUnit.org.example in Labs7-8.executor": "Coverage",
+    "JUnit.org.example.ammunition in Labs7-8.executor": "Coverage",
     "JavaScript Debug.index-all.html.executor": "Run",
     "Maven. [org.apache.maven.plugins:maven-archetype-plugin:RELEASE:generate].executor": "Run",
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "RunOnceActivity.go.formatter.settings.were.checked": "true",
     "RunOnceActivity.go.migrated.go.modules.settings": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrary": "JUnit3",
+    "com.intellij.testIntegration.createTest.CreateTestDialog.defaultLibrarySuperClass.JUnit3": "junit.framework.TestCase",
     "git-widget-placeholder": "master",
     "go.import.settings.migrated": "true",
     "kotlin-language-version-configured": "true",
@@ -62,9 +87,17 @@
     "vue.rearranger.settings.migration": "true"
   }
 }]]></component>
-  <component name="RunManager" selected="Application.App">
-    <configuration name="App" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
-      <option name="MAIN_CLASS_NAME" value="org.example.App" />
+  <component name="RecentsManager">
+    <key name="CreateTestDialog.Recents.Supers">
+      <recent name="junit.framework.TestCase" />
+    </key>
+    <key name="CreateTestDialog.RecentsKey">
+      <recent name="org.example" />
+      <recent name="org.example.ammunition" />
+    </key>
+  </component>
+  <component name="RunManager" selected="JUnit.org.example in Labs7-8">
+    <configuration name="AmmunitionListTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="Labs7-8" />
       <extension name="coverage">
         <pattern>
@@ -72,17 +105,80 @@
           <option name="ENABLED" value="true" />
         </pattern>
       </extension>
+      <option name="PACKAGE_NAME" value="org.example" />
+      <option name="MAIN_CLASS_NAME" value="org.example.AmmunitionListTest" />
+      <option name="TEST_OBJECT" value="class" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="index-all.html" type="JavascriptDebugType" temporary="true" nameIsGenerated="true" uri="http://localhost:63342/Labs7-8/target/site/apidocs/index-all.html" useBuiltInWebServerPort="true">
-      <method v="2" />
+    <configuration name="AmmunitionListTest.increaseCapacity_EnsureCapacity" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="Labs7-8" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="org.example.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="org.example" />
+      <option name="MAIN_CLASS_NAME" value="org.example.AmmunitionListTest" />
+      <option name="METHOD_NAME" value="increaseCapacity_EnsureCapacity" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="AmmunitionListTest.removeByObject_NullObject" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="Labs7-8" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="org.example.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="org.example" />
+      <option name="MAIN_CLASS_NAME" value="org.example.AmmunitionListTest" />
+      <option name="METHOD_NAME" value="removeByObject_NullObject" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="org.example in Labs7-8" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="Labs7-8" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="org.example.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="org.example" />
+      <option name="TEST_OBJECT" value="package" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="org.example.ammunition in Labs7-8" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="Labs7-8" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="org.example.ammunition.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="org.example.ammunition" />
+      <option name="TEST_OBJECT" value="package" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.App" />
-        <item itemvalue="JavaScript Debug.index-all.html" />
+        <item itemvalue="JUnit.org.example in Labs7-8" />
+        <item itemvalue="JUnit.AmmunitionListTest.removeByObject_NullObject" />
+        <item itemvalue="JUnit.AmmunitionListTest.increaseCapacity_EnsureCapacity" />
+        <item itemvalue="JUnit.org.example.ammunition in Labs7-8" />
+        <item itemvalue="JUnit.AmmunitionListTest" />
       </list>
     </recent_temporary>
   </component>
@@ -103,7 +199,7 @@
       <updated>1703600289987</updated>
       <workItem from="1703600291082" duration="1196000" />
       <workItem from="1703610014089" duration="744000" />
-      <workItem from="1703611670957" duration="11892000" />
+      <workItem from="1703611670957" duration="25281000" />
     </task>
     <task id="LOCAL-00001" summary="Initial commit">
       <option name="closed" value="true" />
@@ -129,7 +225,15 @@
       <option name="project" value="LOCAL" />
       <updated>1703618730035</updated>
     </task>
-    <option name="localTasksCounter" value="4" />
+    <task id="LOCAL-00004" summary="Add exception handling">
+      <option name="closed" value="true" />
+      <created>1703627597212</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1703627597214</updated>
+    </task>
+    <option name="localTasksCounter" value="5" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -149,9 +253,18 @@
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Initial commit" />
     <MESSAGE value="Fix list implementation" />
-    <option name="LAST_COMMIT_MESSAGE" value="Fix list implementation" />
+    <MESSAGE value="Add exception handling" />
+    <option name="LAST_COMMIT_MESSAGE" value="Add exception handling" />
   </component>
   <component name="VgoProject">
     <settings-migrated>true</settings-migrated>
+  </component>
+  <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/Labs7_8$org_example_in_Labs7_8.ic" NAME="org.example in Labs7-8 Coverage Results" MODIFIED="1703641000012" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>org.example.*</FILTER>
+    </SUITE>
+    <SUITE FILE_PATH="coverage/Labs7_8$org_example_ammunition_in_Labs7_8.ic" NAME="org.example.ammunition in Labs7-8 Coverage Results" MODIFIED="1703640231342" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="idea" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false">
+      <FILTER>org.example.ammunition.*</FILTER>
+    </SUITE>
   </component>
 </project>

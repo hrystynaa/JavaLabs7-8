@@ -1,5 +1,7 @@
 package org.example;
 
+import org.example.ammunition.Ammunition;
+
 import java.util.Comparator;
 
 /**
@@ -55,7 +57,6 @@ public class KnightEquipment<T extends Ammunition> {
         }
         return result;
     }
-
 
     /**
      * Returns a string representation of the knight's equipment.

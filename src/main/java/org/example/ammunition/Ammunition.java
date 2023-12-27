@@ -1,11 +1,14 @@
-package org.example;
+package org.example.ammunition;
+
+import org.example.AmmunitionException;
+
 /**
  * Represents the base class for ammunition.
  */
 public class Ammunition {
-    String name;
-    double weight;
-    double price;
+    public String name;
+    public double weight;
+    public double price;
 
     /**
      * Constructs an ammunition object with the given properties.
@@ -16,7 +19,7 @@ public class Ammunition {
      * @throws IllegalArgumentException if name is empty, or weight/price is negative.
      */
     public Ammunition(String name, double weight, double price) throws AmmunitionException {
-        if (name.isEmpty()) {
+        if (name == null || name.isEmpty()) {
             throw new AmmunitionException("Name cannot be empty: " + name);
         }
         if (weight < 0) {

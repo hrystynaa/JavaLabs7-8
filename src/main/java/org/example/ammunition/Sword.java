@@ -1,4 +1,7 @@
-package org.example;
+package org.example.ammunition;
+
+import org.example.AmmunitionException;
+
 /**
  * Represents a sword, a type of ammunition.
  */

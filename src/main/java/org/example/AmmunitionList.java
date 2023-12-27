@@ -1,5 +1,6 @@
 package org.example;
 
+import org.example.ammunition.Ammunition;
 import org.jetbrains.annotations.NotNull;
 
 import java.util.*;
@@ -517,7 +518,7 @@ public class AmmunitionList implements List<Ammunition> {
      * backward traversal, as well as modifications to the list.
      */
     private class AmmunitionListIterator implements ListIterator<Ammunition> {
-        private int currentIndex = 0;
+        private int currentIndex;
         private boolean canRemoveOrSet = false;
 
         /**

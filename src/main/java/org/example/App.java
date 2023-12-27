@@ -1,7 +1,8 @@
 package org.example;
 
+import org.example.ammunition.*;
+
 import java.util.List;
-import java.util.NoSuchElementException;
 
 /**
  * The main application class for managing knight equipment.
